@@ -1,7 +1,5 @@
 # Laravel Str mixins
 
-[![Build Status](https://travis-ci.com/kawax/laravel-str-mixins.svg?branch=master)](https://travis-ci.com/kawax/laravel-str-mixins)
-
 `Illuminate\Support\Str`を拡張する主に日本語用のmixin
 
 ## Requirements
