@@ -1,6 +1,6 @@
 # Laravel Str mixins
 
-`Illuminate\Support\Str`を拡張する主に日本語用のmixin
+Mixin that extends `Illuminate\Support\Str` mainly for Japanese language use
 
 ## Requirements
 - PHP >= 8.2
@@ -13,8 +13,8 @@
 | [1.x](https://github.com/kawax/laravel-str-mixins/tree/1.x) | ^7.2 | 6       |
 | 2.x                                                         | ^8.2 | 11/12   |
 
-- v1.xはLaravel6のみ。
-- v2.xはFluent StringsのためにLaravel7以上のみ対応。
+- v1.x is for Laravel 6 only.
+- v2.x supports Laravel 7 and above only for Fluent Strings.
 
 ## Installation
 ```shell
@@ -29,7 +29,7 @@ composer remove revolution/laravel-str-mixins
 ## Str
 
 ### Str::textwrap(string $str, int $width = 10, string $break = PHP_EOL): string
-指定の文字数で改行。単純に改行なので禁則処理などはない。
+Line breaks at specified number of characters. Simple line breaks without word-wrapping rules.
 
 ```php
 $text = Str::textwrap(str: 'abcde', width: 3);
@@ -38,12 +38,12 @@ $text = Str::textwrap(str: 'abcde', width: 3);
 // de
 ```
 
-元々はOGP画像の幅に収めるための強引な改行が目的。
+Originally intended for forcing line breaks to fit within OGP image width.
 
-Laravel 10.19.0で同名の`Str::wordWrap()`が追加されたので`textwrap`に変更。動作が違うので削除せず残し。`Str::wordWrap()`は日本語では期待した動作にならない。
+Changed to `textwrap` because Laravel 10.19.0 added a function with the same name `Str::wordWrap()`. Kept instead of removing because the behavior is different. `Str::wordWrap()` doesn't work as expected with Japanese text.
 
 ### Str::kana(string $str, string $option = 'KV', string $encoding = 'UTF-8'): string
-`mb_convert_kana()`と同じ。
+Same as `mb_convert_kana()`.
 
 ```php
 $text = Str::kana(str: 'abｃあいうｱｲｳ', option: 'KVa');
@@ -52,7 +52,7 @@ $text = Str::kana(str: 'abｃあいうｱｲｳ', option: 'KVa');
 ```
 
 ### Str::truncate(string $str, int $limit = 100, string $end = '...'): string
-`Str::limit()`は半角は1、全角は2でカウントされて切り捨て。マルチバイト関数を使っているけど文字の幅でカウントしている。
+`Str::limit()` counts half-width characters as 1 and full-width characters as 2 when truncating. It uses multibyte functions but counts by character width.
 
 ```php
 $text = Str::limit('abcあいうえお', 7);
@@ -60,7 +60,7 @@ $text = Str::limit('abcあいうえお', 7);
 // abcあい...
 ```
 
-日本語だと期待した動作ではないので文字数でカウントして切り捨てる`Str::truncate()`
+`Str::truncate()` counts by the number of characters for truncation, which works better for Japanese text.
 
 ```php
 $text = Str::truncate(str: 'abcあいうえお', limit: 7);
@@ -87,7 +87,7 @@ $text = Str::of('abｃあいうｱｲｳ')->kana(option: 'KVa')->value();
 // abcあいうアイウ
 ```
 
-繋げて使う用。
+For chaining use:
 
 ```php
 $text = Str::of('abｃあいうｱｲｳ')->kana(option: 'KVa')->textwrap(3)->value();
@@ -105,4 +105,4 @@ $text = Str::of('abcあいうえお')->truncate(limit: 6, end: '___')->value();
 ```
 
 ## LICENSE
-MIT  
+MIT      
