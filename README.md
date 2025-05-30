@@ -8,10 +8,10 @@ Mixin that extends `Illuminate\Support\Str` mainly for Japanese language use
 
 ## Versioning
 
-| ver                                                         | PHP  | Laravel |
-|-------------------------------------------------------------|------|---------|
-| [1.x](https://github.com/kawax/laravel-str-mixins/tree/1.x) | ^7.2 | 6       |
-| 2.x                                                         | ^8.2 | 11/12   |
+| ver                                                             | PHP  | Laravel |
+|-----------------------------------------------------------------|------|---------|
+| [1.x](https://github.com/invokable/laravel-str-mixins/tree/1.x) | ^7.2 | 6       |
+| 2.x                                                             | ^8.2 | 11/12   |
 
 - v1.x is for Laravel 6 only.
 - v2.x supports Laravel 7 and above only for Fluent Strings.
