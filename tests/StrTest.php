@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 
 class StrTest extends TestCase
 {
-    public function testStrTextWrap()
+    public function test_str_text_wrap()
     {
         $this->assertSame("abc\nde", Str::textwrap('abcde', 3));
         $this->assertSame("あいう\nえお", Str::textwrap('あいうえお', 3));
@@ -17,13 +17,13 @@ class StrTest extends TestCase
         $this->assertNotSame("あいう\nえお", Str::wordWrap('あいうえお', 3));
     }
 
-    public function testStrKana()
+    public function test_str_kana()
     {
         $this->assertSame('abcあいうアイウ', Str::kana('abｃあいうｱｲｳ', 'KVa'));
         $this->assertSame('', Str::kana(null));
     }
 
-    public function testStrTruncate()
+    public function test_str_truncate()
     {
         $this->assertSame('abcあいうえお', Str::truncate(str: 'abcあいうえお'));
         $this->assertSame('abcあいうえ...', Str::truncate(str: 'abcあいうえお', limit: 7));

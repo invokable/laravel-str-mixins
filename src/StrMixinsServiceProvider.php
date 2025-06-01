@@ -22,10 +22,10 @@ class StrMixinsServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Str::macro('textwrap', new TextWrap());
-        Str::macro('kana', new Kana());
-        Str::macro('truncate', new Truncate());
+        Str::macro('textwrap', new TextWrap);
+        Str::macro('kana', new Kana);
+        Str::macro('truncate', new Truncate);
 
-        Stringable::mixin(new Japanese());
+        Stringable::mixin(new Japanese);
     }
 }
