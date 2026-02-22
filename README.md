@@ -3,15 +3,15 @@
 Mixin that extends `Illuminate\Support\Str` mainly for Japanese language use
 
 ## Requirements
-- PHP >= 8.2
-- Laravel >= 11.0
+- PHP >= 8.3
+- Laravel >= 12.0
 
 ## Versioning
 
 | ver                                                             | PHP  | Laravel |
 |-----------------------------------------------------------------|------|---------|
 | [1.x](https://github.com/invokable/laravel-str-mixins/tree/1.x) | ^7.2 | 6       |
-| 2.x                                                             | ^8.2 | 11/12   |
+| 2.x                                                             | ^8.3 | ^12   |
 
 - v1.x is for Laravel 6 only.
 - v2.x supports Laravel 7 and above only for Fluent Strings.

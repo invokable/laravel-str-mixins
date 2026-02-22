@@ -66,8 +66,8 @@ public function textwrap(): Closure
 ## Development Setup
 
 ### Requirements
-- PHP >= 8.2
-- Laravel >= 11.0
+- PHP >= 8.3
+- Laravel >= 12.0
 - ext-mbstring (for multibyte string functions)
 
 ### Installation & Setup
